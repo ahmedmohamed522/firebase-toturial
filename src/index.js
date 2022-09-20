@@ -22,9 +22,7 @@ const colRef = collection(db, "books");
 const books = [];
 const docs = getDocs(colRef)
     .then((snapshot) => {
-        //  console.log(snapshot.docs);
         snapshot.docs.forEach((doc) => {
-            //   console.log(doc.data());
             books.push({ ...doc.data(), id: doc.id });
         });
     })
